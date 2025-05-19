@@ -24,8 +24,6 @@ export default function AgregarEmpleado() {
     const urlBase =
       "https://abundant-energy-production.up.railway.app/empleados";
 
-
-
     await axios.post(urlBase, empleado);
     navegacion("/");
   };
