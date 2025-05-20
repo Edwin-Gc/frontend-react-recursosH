@@ -1,4 +1,3 @@
-
 .nav-custom {
   border-radius: 12px;
   box-shadow: 0 4px 8px #00000026;
@@ -16,14 +15,14 @@
 
 .nav-link {
   border-radius: 8px;
-  color: #fff !important;
+  color: #ffffff !important;
   transition: background-color 0.3s ease;
 }
 
 .nav-link.active,
 .nav-link:hover {
-  background-color: #1a0acb33;
-  color: #fff !important;
+  background-color: #0d6efd33; /* azul claro */
+  color: #ffffff !important;
 }
 
 @media (max-width: 768px) {
@@ -39,5 +38,3 @@
     border-radius: 0;
   }
 }
-
-/*# sourceMappingURL=main.9d266bc4.css.map */
