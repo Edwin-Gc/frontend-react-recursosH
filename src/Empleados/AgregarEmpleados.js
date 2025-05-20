@@ -4,29 +4,26 @@ import { useNavigate } from "react-router-dom";
 
 export default function AgregarEmpleado() {
   let navegacion = useNavigate();
-
   const [empleado, setEmpleado] = useState({
     nombre: "",
     departamento: "",
-    sueldo: "",
+    email: "",
+    telefono: "",
+    ciudad: "",
+    salario: "",
   });
 
-  const { nombre, departamento, sueldo } = empleado;
+  const { nombre, departamento, email, telefono, ciudad, salario } = empleado;
 
   const onInputChange = (e) => {
-    //spread operator ... (expandir los atributos)
     setEmpleado({ ...empleado, [e.target.name]: e.target.value });
   };
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    
     const urlBase ="https://abundant-energy-production.up.railway.app/empleados";
 
-
-
     await axios.post(urlBase, empleado);
-    // Redirigimos a la pagina de inicio
     navegacion("/");
   };
 
@@ -36,7 +33,7 @@ export default function AgregarEmpleado() {
         <h3>Agregar Empleado</h3>
       </div>
 
-      <form onSubmit={(e) => onSubmit(e)}>
+      <form onSubmit={onSubmit}>
         <div className="mb-3">
           <label htmlFor="nombre" className="form-label">
             Nombre
@@ -46,11 +43,12 @@ export default function AgregarEmpleado() {
             className="form-control"
             id="nombre"
             name="nombre"
-            required={true}
+            required
             value={nombre}
-            onChange={(e) => onInputChange(e)}
+            onChange={onInputChange}
           />
         </div>
+
         <div className="mb-3">
           <label htmlFor="departamento" className="form-label">
             Departamento
@@ -61,25 +59,69 @@ export default function AgregarEmpleado() {
             id="departamento"
             name="departamento"
             value={departamento}
-            onChange={(e) => onInputChange(e)}
+            onChange={onInputChange}
           />
         </div>
+
         <div className="mb-3">
-          <label htmlFor="sueldo" className="form-label">
-            Sueldo
+          <label htmlFor="email" className="form-label">
+            Email
+          </label>
+          <input
+            type="text"
+            className="form-control"
+            id="email"
+            name="email"
+            value={email}
+            onChange={onInputChange}
+          />
+        </div>
+
+        <div className="mb-3">
+          <label htmlFor="telefono" className="form-label">
+            Telefono
+          </label>
+          <input
+            type="text"
+            className="form-control"
+            id="telefono"
+            name="telefono"
+            value={telefono}
+            onChange={onInputChange}
+          />
+        </div>
+
+        <div className="mb-3">
+          <label htmlFor="ciudad" className="form-label">
+            Ciudad
+          </label>
+          <input
+            type="text"
+            className="form-control"
+            id="ciudad"
+            name="ciudad"
+            value={ciudad}
+            onChange={onInputChange}
+          />
+        </div>
+
+        <div className="mb-3">
+          <label htmlFor="salario" className="form-label">
+            Salario
           </label>
           <input
             type="number"
             step="any"
             className="form-control"
-            id="sueldo"
-            name="sueldo"
-            value={sueldo}
-            onChange={(e) => onInputChange(e)}
+            id="salario"
+            name="salario"
+            value={salario}
+            onChange={onInputChange}
           />
         </div>
+
         <div className="text-center">
-          <button type="submit" className="btn btn-warning btn-sm me-3">
+          <button type="submit" className="btn btn-primary btn-sm me-3">
             Agregar
           </button>
           <a href="/" className="btn btn-danger btn-sm">

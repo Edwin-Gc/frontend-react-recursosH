@@ -4,10 +4,9 @@ import { NumericFormat } from "react-number-format";
 import { Link } from "react-router-dom";
 
 export default function ListadoEmpleados() {
-  const urlBase ="https://abundant-energy-production.up.railway.app/empleados";
+  const urlBase = "https://abundant-energy-production.up.railway.app/empleados";
 
   const [empleados, setEmpleados] = useState([]);
-
   useEffect(() => {
     cargarEmpleados();
   }, []);
@@ -27,32 +26,40 @@ export default function ListadoEmpleados() {
   return (
     <div className="container">
       <div className="container text-center" style={{ margin: "30px" }}>
-        <h3>Sistema de Recursos Humanos</h3>
+        <h3>sistema De Recursos Humanos Actualizado</h3>
       </div>
 
-      <table className="table table-striped table-hover align-middle">
+      <table className="table table-success table-striped">
         <thead className="table-dark">
           <tr>
             <th scope="col">Id</th>
             <th scope="col">Empleado</th>
             <th scope="col">Departamento</th>
-            <th scope="col">Sueldo</th>
-            <th></th>
+            <th scope="col">Email</th>
+            <th scope="col">Telefono</th>
+            <th scope="col">Ciudad</th>
+            <th scope="col">Salario</th>
+            <th scope="col">Asistencia</th>
+
+            <th> </th>
           </tr>
         </thead>
         <tbody>
           {
-            //Iteramos el arreglo de empleados
+            //iteramos arreglo de empleados
             empleados.map((empleado, indice) => (
               <tr key={indice}>
                 <th scope="row">{empleado.idEmpleado}</th>
                 <td>{empleado.nombre}</td>
                 <td>{empleado.departamento}</td>
+                <td>{empleado.email}</td>
+                <td>{empleado.telefono}</td>
+                <td>{empleado.ciudad}</td>
                 <td>
                   <NumericFormat
-                    value={empleado.sueldo}
+                    value={empleado.salario}
                     displayType={"text"}
-                    thousandSeparator=","
+                    thousandSeparator={","}
                     prefix={"$"}
                     decimalScale={2}
                     fixedDecimalScale
@@ -66,6 +73,7 @@ export default function ListadoEmpleados() {
                     >
                       Editar
                     </Link>
+
                     <button
                       onClick={() => eliminarEmpleado(empleado.idEmpleado)}
                       className="btn btn-danger btn-sm"
