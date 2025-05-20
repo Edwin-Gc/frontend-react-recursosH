@@ -27,16 +27,20 @@ export default function AgregarEmpleado() {
     await axios.post(urlBase, empleado);
     navegacion("/");
   };
+ 
+
   return (
     <div className="container py-4">
       <div className="row justify-content-center">
         <div className="col-md-8 col-lg-6">
-          <div className="card shadow rounded">
+          {/* Caja del título */}
+          <div className="bg-white shadow p-3 mb-4 rounded text-center">
+            <h2 className="fw-bold m-0">Agregar Empleado</h2>
+          </div>
+  
+          {/* Formulario con estilos */}
+          <div className="card shadow-sm rounded">
             <div className="card-body">
-              <div className="text-center mb-4">
-                <h3 className="fw-bold">Agregar Empleado</h3>
-              </div>
-
               <form onSubmit={onSubmit}>
                 <div className="mb-3">
                   <label htmlFor="nombre" className="form-label">
@@ -52,7 +56,7 @@ export default function AgregarEmpleado() {
                     onChange={onInputChange}
                   />
                 </div>
-
+  
                 <div className="mb-3">
                   <label htmlFor="departamento" className="form-label">
                     Departamento
@@ -66,7 +70,7 @@ export default function AgregarEmpleado() {
                     onChange={onInputChange}
                   />
                 </div>
-
+  
                 <div className="mb-3">
                   <label htmlFor="email" className="form-label">
                     Email
@@ -80,10 +84,10 @@ export default function AgregarEmpleado() {
                     onChange={onInputChange}
                   />
                 </div>
-
+  
                 <div className="mb-3">
                   <label htmlFor="telefono" className="form-label">
-                    Telefono
+                    Teléfono
                   </label>
                   <input
                     type="text"
@@ -94,7 +98,7 @@ export default function AgregarEmpleado() {
                     onChange={onInputChange}
                   />
                 </div>
-
+  
                 <div className="mb-3">
                   <label htmlFor="ciudad" className="form-label">
                     Ciudad
@@ -108,7 +112,7 @@ export default function AgregarEmpleado() {
                     onChange={onInputChange}
                   />
                 </div>
-
+  
                 <div className="mb-4">
                   <label htmlFor="salario" className="form-label">
                     Salario
@@ -123,7 +127,7 @@ export default function AgregarEmpleado() {
                     onChange={onInputChange}
                   />
                 </div>
-
+  
                 <div className="text-center">
                   <button type="submit" className="btn btn-primary me-2">
                     Agregar
@@ -139,4 +143,4 @@ export default function AgregarEmpleado() {
       </div>
     </div>
   );
-}
+}  
