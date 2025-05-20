@@ -27,24 +27,23 @@ export default function AgregarEmpleado() {
     await axios.post(urlBase, empleado);
     navegacion("/");
   };
- 
-
 
   return (
     <div className="container py-4">
       <div className="row justify-content-center">
         <div className="col-md-8 col-lg-6">
-  
           {/* Caja del título */}
-          <div className="bg-white shadow p-3 mb-4 rounded text-center">
+          <div className="bg-white shadow p-3 mb-4 rounded text-center border">
             <h2 className="fw-bold m-0">Agregar Empleado</h2>
           </div>
-  
+
           {/* Formulario */}
           <form onSubmit={onSubmit}>
             {/* Campo: Nombre */}
-            <div className="mb-3">
-              <label htmlFor="nombre" className="form-label">Nombre</label>
+            <div className="mb-3 shadow-sm p-3 bg-white rounded border">
+              <label htmlFor="nombre" className="form-label">
+                Nombre
+              </label>
               <input
                 type="text"
                 className="form-control"
@@ -55,10 +54,12 @@ export default function AgregarEmpleado() {
                 onChange={onInputChange}
               />
             </div>
-  
+
             {/* Campo: Departamento */}
-            <div className="mb-3">
-              <label htmlFor="departamento" className="form-label">Departamento</label>
+            <div className="mb-3 shadow-sm p-3 bg-white rounded border">
+              <label htmlFor="departamento" className="form-label">
+                Departamento
+              </label>
               <input
                 type="text"
                 className="form-control"
@@ -68,13 +69,15 @@ export default function AgregarEmpleado() {
                 onChange={onInputChange}
               />
             </div>
-  
-            {/* Caja con Email, Teléfono, Ciudad */}
-            <div className="bg-white shadow-sm p-3 mb-3 rounded">
+
+            {/* Caja con Email, Teléfono y Ciudad */}
+            <div className="bg-white shadow p-3 mb-3 rounded border">
               <div className="mb-3">
-                <label htmlFor="email" className="form-label">Email</label>
+                <label htmlFor="email" className="form-label">
+                  Email
+                </label>
                 <input
-                  type="text"
+                  type="email"
                   className="form-control"
                   id="email"
                   name="email"
@@ -82,9 +85,11 @@ export default function AgregarEmpleado() {
                   onChange={onInputChange}
                 />
               </div>
-  
+
               <div className="mb-3">
-                <label htmlFor="telefono" className="form-label">Teléfono</label>
+                <label htmlFor="telefono" className="form-label">
+                  Teléfono
+                </label>
                 <input
                   type="text"
                   className="form-control"
@@ -94,9 +99,11 @@ export default function AgregarEmpleado() {
                   onChange={onInputChange}
                 />
               </div>
-  
-              <div className="mb-0">
-                <label htmlFor="ciudad" className="form-label">Ciudad</label>
+
+              <div>
+                <label htmlFor="ciudad" className="form-label">
+                  Ciudad
+                </label>
                 <input
                   type="text"
                   className="form-control"
@@ -107,10 +114,12 @@ export default function AgregarEmpleado() {
                 />
               </div>
             </div>
-  
+
             {/* Campo: Salario */}
             <div className="mb-4">
-              <label htmlFor="salario" className="form-label">Salario</label>
+              <label htmlFor="salario" className="form-label">
+                Salario
+              </label>
               <input
                 type="number"
                 step="any"
@@ -121,14 +130,17 @@ export default function AgregarEmpleado() {
                 onChange={onInputChange}
               />
             </div>
-  
+
             {/* Botones */}
             <div className="text-center">
-              <button type="submit" className="btn btn-primary me-2">Agregar</button>
-              <a href="/" className="btn btn-danger">Regresar</a>
+              <button type="submit" className="btn btn-primary me-2">
+                Agregar
+              </button>
+              <a href="/" className="btn btn-danger">
+                Regresar
+              </a>
             </div>
           </form>
-  
         </div>
       </div>
     </div>
