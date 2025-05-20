@@ -21,14 +21,26 @@ export default function EditarEmpleado() {
 
   const { nombre, departamento, email, telefono, ciudad, salario } = empleado;
 
-  useEffect(() => {
-    cargarEmpleado();
-  }, []);
 
-  const cargarEmpleado = async () => {
-    const resultado = await axios.get(`${urlBase}/${id}`);
-    setEmpleado(resultado.data);
-  };
+
+
+
+  useEffect(() => {
+    const cargarEmpleado = async () => {
+      const resultado = await axios.get(`${urlBase}/${id}`);
+      setEmpleado(resultado.data);
+    };
+
+    cargarEmpleado();
+  }, [id, urlBase]);
+  
+
+
+
+
+
+
+
 
   const onInputChange = (e) => {
     //spread operator ... (expandir los atributos)
