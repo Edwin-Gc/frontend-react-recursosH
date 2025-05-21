@@ -1,3 +1,5 @@
+
+
 .nav-custom {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   border-radius: 12px;
@@ -11,7 +13,6 @@
 .navbar-brand {
   font-size: 1.6rem;
   font-weight: 600;
-  
 }
 
 .nav-link {
@@ -37,22 +38,30 @@
     border-radius: 0; /* opcional, para que ocupe todo el ancho sin bordes redondeados en móvil */
   }
 }
-.nav-custom {
-  border-radius: 12px;
-  box-shadow: 0 4px 8px #00000026;
-  transition: box-shadow 0.3s ease;
-}
 
-@media (max-width: 768px) {
-  .navbar-nav {
-    text-align: center;
-  }
 
-  .nav-link {
-    margin: 6px 0;
-  }
 
-  .nav-custom {
-    border-radius: 0;
-  }
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
