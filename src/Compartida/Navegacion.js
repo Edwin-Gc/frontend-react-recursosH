@@ -1,14 +1,15 @@
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
-import "./Navegacion.css";
+import { Link } from "react-router-dom";
 
 export default function Navegacion() {
-  const location = useLocation();
-
   return (
-    <div className="container my-3">
-      <nav className="navbar navbar-expand-lg bg-primary nav-custom">
+    <div className="container mt-4">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-primary rounded nav-custom">
         <div className="container-fluid">
+          <a className="navbar-brand" href="/">
+            Recursos Humanos
+          </a>
+
           <button
             className="navbar-toggler"
             type="button"
@@ -22,27 +23,14 @@ export default function Navegacion() {
           </button>
 
           <div className="collapse navbar-collapse" id="navbarNav">
-            <a className="navbar-brand text-white" href="/">
-              Recursos Humanos
-            </a>
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul className="navbar-nav ms-auto">
               <li className="nav-item">
-                <Link
-                  className={`nav-link ${
-                    location.pathname === "/" ? "active" : ""
-                  }`}
-                  to="/"
-                >
+                <a className="nav-link active" aria-current="page" href="/">
                   Inicio
-                </Link>
+                </a>
               </li>
               <li className="nav-item">
-                <Link
-                  className={`nav-link ${
-                    location.pathname === "/agregar" ? "active" : ""
-                  }`}
-                  to="/agregar"
-                >
+                <Link className="nav-link" to="/agregar">
                   Agregar Empleado
                 </Link>
               </li>

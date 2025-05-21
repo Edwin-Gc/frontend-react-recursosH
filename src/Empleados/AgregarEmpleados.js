@@ -1,3 +1,4 @@
+
 import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -21,128 +22,139 @@ export default function AgregarEmpleado() {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    const urlBase =
-      "https://abundant-energy-production.up.railway.app/empleados";
+    
+    const urlBase = "https://abundant-energy-production.up.railway.app/empleados";
+
+
+
 
     await axios.post(urlBase, empleado);
     navegacion("/");
   };
 
   return (
-    <div className="container py-4">
-      <div className="row justify-content-center">
-        <div className="col-md-8 col-lg-6">
-          {/* Caja del título */}
-          <div className="bg-white shadow p-3 mb-4 rounded text-center border">
-            <h2 className="fw-bold m-0">Agregar Empleado</h2>
-          </div>
-
-          {/* Formulario */}
-          <form onSubmit={onSubmit}>
-            {/* Campo: Nombre */}
-            <div className="mb-3 shadow-sm p-3 bg-white rounded border">
-              <label htmlFor="nombre" className="form-label">
-                Nombre
-              </label>
-              <input
-                type="text"
-                className="form-control"
-                id="nombre"
-                name="nombre"
-                required
-                value={nombre}
-                onChange={onInputChange}
-              />
-            </div>
-
-            {/* Campo: Departamento */}
-            <div className="mb-3 shadow-sm p-3 bg-white rounded border">
-              <label htmlFor="departamento" className="form-label">
-                Departamento
-              </label>
-              <input
-                type="text"
-                className="form-control"
-                id="departamento"
-                name="departamento"
-                value={departamento}
-                onChange={onInputChange}
-              />
-            </div>
-
-            {/* Caja con Email, Teléfono y Ciudad */}
-            <div className="bg-white shadow p-3 mb-3 rounded border">
-              <div className="mb-3">
-                <label htmlFor="email" className="form-label">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  className="form-control"
-                  id="email"
-                  name="email"
-                  value={email}
-                  onChange={onInputChange}
-                />
-              </div>
-
-              <div className="mb-3">
-                <label htmlFor="telefono" className="form-label">
-                  Teléfono
-                </label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="telefono"
-                  name="telefono"
-                  value={telefono}
-                  onChange={onInputChange}
-                />
-              </div>
-
-              <div>
-                <label htmlFor="ciudad" className="form-label">
-                  Ciudad
-                </label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="ciudad"
-                  name="ciudad"
-                  value={ciudad}
-                  onChange={onInputChange}
-                />
-              </div>
-            </div>
-
-            {/* Campo: Salario */}
-            <div className="mb-4">
-              <label htmlFor="salario" className="form-label">
-                Salario
-              </label>
-              <input
-                type="number"
-                step="any"
-                className="form-control"
-                id="salario"
-                name="salario"
-                value={salario}
-                onChange={onInputChange}
-              />
-            </div>
-
-            {/* Botones */}
-            <div className="text-center">
-              <button type="submit" className="btn btn-primary me-2">
-                Agregar
-              </button>
-              <a href="/" className="btn btn-danger">
-                Regresar
-              </a>
-            </div>
-          </form>
-        </div>
+    <div className="container" style={{ maxWidth: "600px", marginTop: "30px" }}>
+      <div
+        className="text-center"
+        style={{
+          marginBottom: "24px",
+          padding: "15px 20px",
+          boxShadow: "0 8px 20px rgba(0,0,0,0.25)",
+          borderRadius: "12px",
+          backgroundColor: "#f8f9fa",
+          fontWeight: "600",
+        }}
+      >
+        <h3 style={{ textShadow: "2px 2px 6px rgba(0,0,0,0.3)", margin: 0 }}>
+          Agregar Empleado
+        </h3>
       </div>
+
+      <form onSubmit={onSubmit}>
+        <div className="mb-3">
+          <label htmlFor="nombre" className="form-label">
+            Nombre
+          </label>
+          <input
+            type="text"
+            className="form-control"
+            id="nombre"
+            name="nombre"
+            required
+            value={nombre}
+            onChange={onInputChange}
+          />
+        </div>
+
+        <div className="mb-3">
+          <label htmlFor="departamento" className="form-label">
+            Departamento
+          </label>
+          <input
+            type="text"
+            className="form-control"
+            id="departamento"
+            name="departamento"
+            value={departamento}
+            onChange={onInputChange}
+          />
+        </div>
+
+        <div
+          className="mb-3"
+          style={{
+            boxShadow: "0 4px 15px rgba(0,0,0,0.15)",
+            borderRadius: "10px",
+            padding: "15px",
+            backgroundColor: "#ffffff",
+            marginBottom: "20px",
+          }}
+        >
+          <label htmlFor="email" className="form-label">
+            Email
+          </label>
+          <input
+            type="email"
+            className="form-control"
+            id="email"
+            name="email"
+            value={email}
+            onChange={onInputChange}
+            style={{ borderRadius: "8px" }}
+          />
+
+          <label htmlFor="telefono" className="form-label mt-3">
+            Teléfono
+          </label>
+          <input
+            type="text"
+            className="form-control"
+            id="telefono"
+            name="telefono"
+            value={telefono}
+            onChange={onInputChange}
+            style={{ borderRadius: "8px" }}
+          />
+
+          <label htmlFor="ciudad" className="form-label mt-3">
+            Ciudad
+          </label>
+          <input
+            type="text"
+            className="form-control"
+            id="ciudad"
+            name="ciudad"
+            value={ciudad}
+            onChange={onInputChange}
+            style={{ borderRadius: "8px" }}
+          />
+        </div>
+
+        <div className="mb-3">
+          <label htmlFor="salario" className="form-label">
+            Salario
+          </label>
+          <input
+            type="number"
+            step="any"
+            className="form-control"
+            id="salario"
+            name="salario"
+            value={salario}
+            onChange={onInputChange}
+            style={{ borderRadius: "8px" }}
+          />
+        </div>
+
+        <div className="text-center">
+          <button type="submit" className="btn btn-primary btn-sm me-3">
+            Agregar
+          </button>
+          <a href="/" className="btn btn-danger btn-sm">
+            Regresar
+          </a>
+        </div>
+      </form>
     </div>
   );
-}  
+}

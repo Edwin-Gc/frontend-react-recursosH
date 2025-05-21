@@ -1,28 +1,46 @@
 .nav-custom {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   border-radius: 12px;
-  box-shadow: 0 4px 8px #00000026;
   transition: box-shadow 0.3s ease;
 }
 
 .nav-custom:hover {
-  box-shadow: 0 6px 14px #0000004d;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
 }
 
 .navbar-brand {
   font-size: 1.6rem;
   font-weight: 600;
+  
 }
 
 .nav-link {
   border-radius: 8px;
-  color: #ffffff !important;
   transition: background-color 0.3s ease;
+  color: #fff !important;
 }
 
-.nav-link.active,
-.nav-link:hover {
-  background-color: #0d6efd33; /* azul claro */
-  color: #ffffff !important;
+.nav-link:hover,
+.nav-link.active {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff !important;
+}
+
+@media (max-width: 768px) {
+  .navbar-nav {
+    text-align: center;
+  }
+  .nav-link {
+    margin: 6px 0;
+  }
+  .nav-custom {
+    border-radius: 0; /* opcional, para que ocupe todo el ancho sin bordes redondeados en móvil */
+  }
+}
+.nav-custom {
+  border-radius: 12px;
+  box-shadow: 0 4px 8px #00000026;
+  transition: box-shadow 0.3s ease;
 }
 
 @media (max-width: 768px) {
