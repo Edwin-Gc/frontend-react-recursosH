@@ -3,9 +3,8 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 export default function EditarEmpleado() {
-  
-  const urlBase = "https://abundant-energy-production.up.railway.app/empleados";
-
+  const urlBase =
+    "https://sistemarecursosh-88fb142a553e.herokuapp.com/api/empleados";
 
   let navegacion = useNavigate();
   const { id } = useParams();

@@ -4,7 +4,8 @@ import { NumericFormat } from "react-number-format";
 import { Link } from "react-router-dom";
 
 export default function ListadoEmpleados() {
-  const urlBase = "https://abundant-energy-production.up.railway.app/empleados";
+  const urlBase =
+    "https://sistemarecursosh-88fb142a553e.herokuapp.com/api/empleados";
 
   const [empleados, setEmpleados] = useState([]);
   useEffect(() => {

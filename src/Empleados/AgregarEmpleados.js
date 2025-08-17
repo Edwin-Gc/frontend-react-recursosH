@@ -1,4 +1,3 @@
-
 import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -22,11 +21,9 @@ export default function AgregarEmpleado() {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    
-    const urlBase = "https://abundant-energy-production.up.railway.app/empleados";
 
-
-
+    const urlBase =
+      "https://sistemarecursosh-88fb142a553e.herokuapp.com/api/empleados";
 
     await axios.post(urlBase, empleado);
     navegacion("/");
