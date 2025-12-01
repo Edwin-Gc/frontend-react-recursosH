@@ -4,7 +4,9 @@ import { useNavigate, useParams } from "react-router-dom";
 
 export default function EditarEmpleado() {
   const urlBase =
-    "https://sistemarecursosh-88fb142a553e.herokuapp.com/api/empleados";
+   // "https://sistemarecursosh-88fb142a553e.herokuapp.com/api/empleados";
+   //"http://localhost:8080/api/empleados";
+    "https://recursos-humanos-java-b70c253d8968.herokuapp.com/api/empleados";
 
   let navegacion = useNavigate();
   const { id } = useParams();
