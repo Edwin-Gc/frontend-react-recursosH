@@ -7,7 +7,7 @@ export default function EditarEmpleado() {
    // "https://sistemarecursosh-88fb142a553e.herokuapp.com/api/empleados";
    //"http://localhost:8080/api/empleados";
     "https://recursos-humanos-java-b70c253d8968.herokuapp.com/api/empleados";
-
+//"/api/empleados";
   let navegacion = useNavigate();
   const { id } = useParams();
 

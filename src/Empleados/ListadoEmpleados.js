@@ -7,7 +7,8 @@ export default function ListadoEmpleados() {
   const urlBase =
    
    //"http://localhost:8080/api/empleados";
-    
+     //"/api/empleados";
+
 "https://recursos-humanos-java-b70c253d8968.herokuapp.com/api/empleados";
   const [empleados, setEmpleados] = useState([]);
   useEffect(() => {

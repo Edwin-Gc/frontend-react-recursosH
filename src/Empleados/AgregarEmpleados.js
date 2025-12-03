@@ -25,7 +25,7 @@ export default function AgregarEmpleado() {
     const urlBase =
       //"http://localhost:8080/api/empleados";
        "https://recursos-humanos-java-b70c253d8968.herokuapp.com/api/empleados";
-
+//"/api/empleados";
     await axios.post(urlBase, empleado);
     navegacion("/");
   };
