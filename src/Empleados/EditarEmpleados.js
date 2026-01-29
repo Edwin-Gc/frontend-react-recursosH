@@ -6,7 +6,7 @@ export default function EditarEmpleado() {
   const urlBase =
    // "https://sistemarecursosh-88fb142a553e.herokuapp.com/api/empleados";
    //"http://localhost:8080/api/empleados";
-    "https://backend-recursosh.up.railway.app/api/empleados";
+    "https://crud-basico-java.up.railway.app/api/empleados";
 //"/api/empleados";
   let navegacion = useNavigate();
   const { id } = useParams();
@@ -22,14 +22,15 @@ export default function EditarEmpleado() {
 
   const { nombre, departamento, email, telefono, ciudad, salario } = empleado;
 
-  useEffect(() => {
-    cargarEmpleado();
-  }, []);
-
+  
+useEffect(() => {
   const cargarEmpleado = async () => {
     const resultado = await axios.get(`${urlBase}/${id}`);
     setEmpleado(resultado.data);
   };
+  cargarEmpleado();
+}, [id]);
+
 
   const onInputChange = (e) => {
     setEmpleado({ ...empleado, [e.target.name]: e.target.value });
