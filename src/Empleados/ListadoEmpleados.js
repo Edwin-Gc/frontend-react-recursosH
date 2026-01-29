@@ -9,7 +9,7 @@ export default function ListadoEmpleados() {
    //"http://localhost:8080/api/empleados";
      //"/api/empleados";
 
-"https://backend-recursosh.up.railway.app/api/empleados";
+"https://crud-basico-java.up.railway.app/api/empleados";
   const [empleados, setEmpleados] = useState([]);
   useEffect(() => {
     cargarEmpleados();

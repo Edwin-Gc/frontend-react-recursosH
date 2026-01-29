@@ -24,7 +24,7 @@ export default function AgregarEmpleado() {
 
     const urlBase =
       //"http://localhost:8080/api/empleados";
-       "https://backend-recursosh.up.railway.app/api/empleados";
+       "https://crud-basico-java.up.railway.app/api/empleados";
 //"/api/empleados";
     await axios.post(urlBase, empleado);
     navegacion("/");
