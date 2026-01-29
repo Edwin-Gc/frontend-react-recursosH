@@ -9,7 +9,7 @@ export default function ListadoEmpleados() {
    //"http://localhost:8080/api/empleados";
      //"/api/empleados";
 
-"https://recursos-humanos-java-b70c253d8968.herokuapp.com/api/empleados";
+"https://backend-recursosh.up.railway.app/api/empleados";
   const [empleados, setEmpleados] = useState([]);
   useEffect(() => {
     cargarEmpleados();
